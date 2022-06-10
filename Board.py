@@ -3,8 +3,8 @@ from Observable import Observable
 
 class Board(Observable):
     _gnomes = []
-    _toys_list = []
-    _last_gnome = int()
+    _toy = ""
+    _duty_gnome = int()
 
     def subscribe(self, observer):
         self._gnomes.append(observer)
@@ -17,14 +17,16 @@ class Board(Observable):
         if len(self._gnomes) != 3:
             print("You should have 3 gnomes")
             return "You should have 3 gnomes"
-        for i in range(3):
-            self._gnomes[i].create_toy(self._toys_list[i])
-        self._toys_list = []
+        self._gnomes[self._duty_gnome].create_toy(self._toy)
+        if self._duty_gnome == 2:
+            self._duty_gnome = 0
+        else:
+            self._duty_gnome +=1
+
 
     def add_toy_to_list(self, toy):
-        self._toys_list.append(toy)
-        if len(self._toys_list) == 3:
-            self.notify_gnomes()
+        self._toy = toy
+        self.notify_gnomes()
 
     def get_update(self):
         return self._topic
