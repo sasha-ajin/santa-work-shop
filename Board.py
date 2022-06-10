@@ -21,8 +21,7 @@ class Board(Observable):
         if self._duty_gnome == 2:
             self._duty_gnome = 0
         else:
-            self._duty_gnome +=1
-
+            self._duty_gnome += 1
 
     def add_toy_to_list(self, toy):
         self._toy = toy

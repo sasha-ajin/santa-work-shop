@@ -8,4 +8,3 @@ class DollFactory(ToyFactory):
         doll = Doll()
         print(doll, "was created", end=" ")
         return doll
-

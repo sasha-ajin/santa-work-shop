@@ -16,7 +16,7 @@ class SantaClaus:
 
     def hire_gnome(self, gnome: Gnome):
         self._board.subscribe(gnome)
-    
+
     def add_toy_to_list(self, toy: str):
         self._board.add_toy_to_list(toy)
 

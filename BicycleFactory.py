@@ -8,4 +8,3 @@ class BicycleFactory(ToyFactory):
         bicycle = Bicycle()
         print(bicycle, "was created", end=" ")
         return bicycle
-    
