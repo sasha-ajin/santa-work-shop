@@ -2,6 +2,7 @@ from Gnome import Gnome
 from Board import Board
 from SantaClaus import SantaClaus
 
+
 def main():
     santa_claus = SantaClaus()
     board = Board()
